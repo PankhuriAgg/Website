@@ -5,11 +5,11 @@ import { motion } from 'framer-motion'
 const skills = [
   {
     category: "Languages",
-    items: ["Python", "C++", "JavaScript", "TypeScript"],
+    items: ["Python", "C"],
   },
   {
     category: "Web",
-    items: ["Next.js", "React", "Tailwind CSS", "HTML/CSS"],
+    items: ["Next.js", "HTML/CSS"],
   },
   {
     category: "Tools & Platforms",
@@ -17,7 +17,7 @@ const skills = [
   },
   {
     category: "Currently Learning",
-    items: ["Machine Learning", "DSA", "System Design"],
+    items: ["Machine Learning", "Website Building"],
   },
 ]
 

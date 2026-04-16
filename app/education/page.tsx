@@ -7,22 +7,16 @@ const education = [
   {
     degree: "B.Tech — Computer Science & Engineering",
     institution: "NIT Jalandhar (NITJ)",
-    year: "2023 — Present",
+    year: "2025 — Present",
     details: "Currently pursuing undergraduate degree in CSE.",
   },
   {
     degree: "Class XII",
-    institution: "Your School Name",
-    year: "2023",
-    details: "Add your percentage / grade here.",
+    institution: "Indus Valley Public School, Noida",
+    year: "2025",
+    details: "Secured 95.8%",
   },
-  {
-    degree: "Class X",
-    institution: "Your School Name",
-    year: "2021",
-    details: "Add your percentage / grade here.",
-  },
-]
+ ]
 
 export default function Education() {
   return (

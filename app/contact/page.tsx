@@ -5,8 +5,8 @@ import { Mail, GitBranch, Link} from 'lucide-react'
 const contacts = [
   {
     label: "Email",
-    value: "your@email.com",
-    href: "mailto:your@email.com",
+    value: "pankhuriaggarwal467@gmail.com",
+    href: "mailto:pankhuriaggarwal467@gmail.com",
     icon: Mail,
   },
   {
@@ -17,8 +17,8 @@ const contacts = [
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/yourprofile",
-    href: "https://linkedin.com/in/yourprofile",
+    value: "linkedin.com/in/pankhuri-aggarwal",
+    href: "https://www.linkedin.com/in/pankhuri-aggarwal-8a1538383?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     icon: Link,
   },
 ]

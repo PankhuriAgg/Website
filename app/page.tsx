@@ -27,14 +27,11 @@ export default function Home() {
             Hi, I'm Pankhuri
           </h1>
           <p className="text-[#38bdf8] text-2xl font-semibold">
-            Currently a student at NITJ, CSE
+            Code.Build.Scale.
           </p>
         </div>
 
-        <p className="text-[#4a5a7a] text-lg max-w-md font-medium">
-          Welcome to my portfolio. Explore my work, skills and education using the sidebar.
-        </p>
-      </motion.div>
+           </motion.div>
     </div>
   )
 }
