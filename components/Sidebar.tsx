@@ -1,4 +1,3 @@
-
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -16,28 +15,18 @@ export default function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-56 bg-[#080d1a] border-r border-[#1e2d4a] flex flex-col py-10 px-4 z-50">
-      <p className="text-[#7dd3fc] text-xs font-semibold tracking-widest uppercase mb-10 px-3">
-        Portfolio
-      </p>
-      <nav className="flex flex-col gap-1">
-        {links.map(({ href, label, icon: Icon }) => {
-          const active = pathname === href
-          return (
-            <Link
-              key={href}
-              href={href}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${active ? 'tab-active' : 'tab-inactive'}`}
-            >
-              <Icon size={16} />
-              {label}
-            </Link>
-          )
-        })}
-      </nav>
-      <div className="mt-auto px-3">
-        <p className="text-[#1e3a5f] text-xs">Pankhuri © 2025</p>
-      </div>
+    <aside className="fixed left-5 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 bg-[#0a1020] border border-[#1a2744] rounded-2xl p-2 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
+      {links.map(({ href, label, icon: Icon }) => {
+        const active = pathname === href
+        return (
+          <Link key={href} href={href} className="nav-item">
+            <div className={`nav-icon ${active ? 'active' : ''}`}>
+              <Icon size={18} />
+            </div>
+            <span className="tooltip">{label}</span>
+          </Link>
+        )
+      })}
     </aside>
   )
 }
