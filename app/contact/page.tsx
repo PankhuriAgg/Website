@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Mail} from 'lucide-react'
+import { Mail, GitBranch, Link} from 'lucide-react'
 
 const contacts = [
   {
@@ -8,6 +8,18 @@ const contacts = [
     value: "your@email.com",
     href: "mailto:your@email.com",
     icon: Mail,
+  },
+  {
+    label: "GitHub",
+    value: "github.com/PankhuriAgg",
+    href: "https://github.com/PankhuriAgg",
+    icon: GitBranch,
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/yourprofile",
+    href: "https://linkedin.com/in/yourprofile",
+    icon: Link,
   },
 ]
 
