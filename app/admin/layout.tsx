@@ -16,13 +16,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (profile?.role !== 'admin') redirect('/')
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh' }}>
-      <nav style={{ width: 220, padding: '2rem 1rem', borderRight: '1px solid #eee' }}>
-        <p style={{ fontWeight: 600, marginBottom: '1rem' }}>Admin</p>
-        <a href="/admin" style={{ display: 'block', marginBottom: 8 }}>Dashboard</a>
-        <a href="/admin/settings" style={{ display: 'block', marginBottom: 8 }}>Settings</a>
-      </nav>
-      <main style={{ flex: 1, padding: '2rem' }}>{children}</main>
+    <div className="min-h-screen px-12 py-10">
+      <div className="flex items-center justify-between mb-10">
+        <h1 className="text-2xl font-black text-white">Admin Panel</h1>
+        <a href="/" className="text-sm text-[#38bdf8] hover:underline">← Back to site</a>
+      </div>
+      {children}
     </div>
   )
 }
