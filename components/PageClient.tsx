@@ -61,8 +61,8 @@ export default function PageClient({ education, projects, skills, contacts, abou
 
       {/* ABOUT */}
       <section id="about" className="min-h-screen flex flex-col justify-center px-16 py-10">
-        <motion.h2 {...fade()} className="text-4xl font-black text-white mb-8">About Me</motion.h2>
-        {about ? (
+ <motion.h2 {...fade()} className="text-4xl font-black text-white mb-8 font-mono">$whoami</motion.h2>      
+  {about ? (
           <div className="max-w-2xl flex flex-col gap-8">
             <motion.div {...fade(0.1)} className="card p-8">
               <p className="text-[#cbd5e1] text-lg leading-relaxed font-medium">{about.bio}</p>
