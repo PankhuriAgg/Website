@@ -1,6 +1,8 @@
 import PageClient from '@/components/PageClient'
 import { createClient } from '@/lib/supabase/server'
 
+export const revalidate = 0
+
 export default async function Home() {
   const supabase = await createClient()
 
