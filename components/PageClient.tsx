@@ -46,9 +46,9 @@ export default function PageClient({ education, projects, skills, contacts }: {
             <h1 className="text-6xl font-black text-white mb-3 tracking-tight">Hi, I'm Pankhuri</h1>
             <p className="text-[#38bdf8] text-2xl font-semibold">Currently a student at NITJ, CSE</p>
           </div>
-          <p className="text-[#41518c]text-lg max-w-md font-medium">
-            Turning coffee into complex systems.
-          </p>
+          <p className="text-[#87a7ff] text-lg max-w-md font-medium">
+       
+ Building robust systems at the intersection of 0s, 1s, and infinite coffee. Driven by logic, deep-space fascination, and caffeine.           </p>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.8 }}
