@@ -1,8 +1,7 @@
-
 'use client'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { GraduationCap, X, GitBranch, Link, Mail } from 'lucide-react'
+import { GraduationCap, X, GitBranch, Link, Mail, Sparkles } from 'lucide-react'
 
 const iconMap: Record<string, any> = {
   mail: Mail,
@@ -17,11 +16,12 @@ const fade = (delay = 0) => ({
   transition: { duration: 0.6, delay },
 })
 
-export default function PageClient({ education, projects, skills, contacts }: {
+export default function PageClient({ education, projects, skills, contacts, about }: {
   education: any[]
   projects: any[]
   skills: any[]
   contacts: any[]
+  about: any
 }) {
   const [selected, setSelected] = useState<any | null>(null)
 
@@ -46,9 +46,9 @@ export default function PageClient({ education, projects, skills, contacts }: {
             <h1 className="text-6xl font-black text-white mb-3 tracking-tight">Hi, I'm Pankhuri</h1>
             <p className="text-[#38bdf8] text-2xl font-semibold">Currently a student at NITJ, CSE</p>
           </div>
-          <p className="text-[#87a7ff] text-lg max-w-md font-medium">
-       
- Building robust systems at the intersection of 0s, 1s, and infinite coffee. Driven by logic, deep-space fascination, and caffeine.           </p>
+          <p className="text-[#41518c] text-lg max-w-md font-medium">
+            Building robust systems at the intersection of 0s, 1s, and infinite coffee. I'm an aspiring software engineer and bibliophile navigating the space between complex logic and dark academic aesthetics.
+          </p>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.8 }}
@@ -57,6 +57,40 @@ export default function PageClient({ education, projects, skills, contacts }: {
             ↓
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="min-h-screen flex flex-col justify-center px-16 py-10">
+        <motion.h2 {...fade()} className="text-4xl font-black text-white mb-8">About Me</motion.h2>
+        {about ? (
+          <div className="max-w-2xl flex flex-col gap-8">
+            <motion.div {...fade(0.1)} className="card p-8">
+              <p className="text-[#cbd5e1] text-lg leading-relaxed font-medium">{about.bio}</p>
+            </motion.div>
+
+            {(about.fun_facts || []).length > 0 && (
+              <motion.div {...fade(0.2)}>
+                <h3 className="text-[#38bdf8] text-sm font-bold tracking-widest uppercase mb-4 flex items-center gap-2">
+                  <Sparkles size={14} /> Fun Facts
+                </h3>
+                <div className="flex flex-col gap-3">
+                  {(about.fun_facts || []).map((fact: string, i: number) => (
+                    <motion.div
+                      key={i}
+                      {...fade(0.2 + i * 0.08)}
+                      className="card p-4 flex items-start gap-3"
+                    >
+                      <span className="text-[#38bdf8] mt-0.5 shrink-0">→</span>
+                      <p className="text-[#94a3b8] text-base">{fact}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </div>
+        ) : (
+          <p className="text-[#475569]">No about info yet.</p>
+        )}
       </section>
 
       {/* EDUCATION */}
@@ -83,8 +117,7 @@ export default function PageClient({ education, projects, skills, contacts }: {
         <div className="grid grid-cols-2 gap-5 max-w-2xl">
           {projects.map((p, i) => (
             <motion.div
-              key={p.id}
-              {...fade(i * 0.1)}
+              key={p.id} {...fade(i * 0.1)}
               onClick={() => setSelected(p)}
               className="card work-card p-6 cursor-pointer"
             >
@@ -103,16 +136,12 @@ export default function PageClient({ education, projects, skills, contacts }: {
         <AnimatePresence>
           {selected && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center px-8"
               onClick={() => setSelected(null)}
             >
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
                 onClick={e => e.stopPropagation()}
                 className="card p-8 max-w-lg w-full relative"
               >
@@ -163,10 +192,7 @@ export default function PageClient({ education, projects, skills, contacts }: {
             const Icon = iconMap[c.icon_name] || Mail
             return (
               <motion.a
-                key={c.id}
-                href={c.href}
-                target="_blank"
-                {...fade(i * 0.1)}
+                key={c.id} href={c.href} target="_blank" {...fade(i * 0.1)}
                 className="card p-5 flex items-center gap-5 hover:border-[#38bdf8] transition-all group"
               >
                 <div className="text-[#38bdf8] group-hover:scale-110 transition-transform">

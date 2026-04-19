@@ -1,10 +1,10 @@
-
 import Link from 'next/link'
 
 export default function AdminDashboard() {
   return (
     <div className="flex flex-col gap-5 max-w-lg">
       {[
+        { label: 'About Me', href: '/admin/about' },
         { label: 'Education', href: '/admin/education' },
         { label: 'Projects', href: '/admin/projects' },
         { label: 'Skills', href: '/admin/skills' },
